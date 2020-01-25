@@ -12,7 +12,7 @@
 > sudo gem install sass
 ```
 
-### pug
+### Pug
 
 ```shell
 > npm i -D pug pug-cli
@@ -24,7 +24,7 @@
 > npm i -D npm-run-all
 ```
 
-#### usages
+#### Usages
 
 ```shell
 # ----- sass -----
@@ -36,4 +36,9 @@
 
 # ----- npm-run-all -----
 > {npm-run-all,run-{p,s}} [target] [options...]
+
 ```
+
+#### Release
+
+- [GithubPages](https://aoisatonaka.github.io/PWATraining/)
