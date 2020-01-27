@@ -1,4 +1,28 @@
-h1 {
-  background-color: #00ff99; }
+html, body {
+  height: 100vh;
+  font-family: helvetica; }
+
+html, body, h1, p, header, footer {
+  margin: 0;
+  padding: 0; }
+
+header, footer {
+  border: solid 0.1px #ddd;
+  text-align: center;
+  padding: 5vh 0; }
+
+main {
+  margin: 10vh 0;
+  text-align: center; }
+  main #out {
+    margin: 0 auto;
+    width: 200px;
+    font-size: 30px; }
+  main button {
+    margin-top: 5vh;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

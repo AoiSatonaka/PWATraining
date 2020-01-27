@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
+eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\nvar num = 0;\nvar out = document.getElementById('out');\nout.innerHTML = num.toString();\ndocument.getElementById('btn').onclick = function (e) {\n    num++;\n    out.innerHTML = num.toString();\n};\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
 
 /***/ })
 
