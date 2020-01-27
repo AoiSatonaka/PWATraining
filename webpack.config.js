@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
 
 const entPath = path.resolve(__dirname,'src/js');
-const outPath = path.resolve(__dirname,'public/js');
+const outPath = path.resolve(__dirname,'public');
 
 const dirNames = fs.readdirSync(entPath);
     
@@ -17,7 +18,16 @@ module.exports = {
     entry: entrys,
     output: {
         path: outPath,
-        filename: '[name].bundle.js'
+        filename: data => {
+            switch(data.chunk.name){
+                case 'sw':
+                    return 'sw.js';
+                case 'index.ts':
+                    return  'js/index.bundle.js';
+                default:
+                    return 'js/[name].bundle.js';
+            }  
+        }
     },
     module: {
         rules: [

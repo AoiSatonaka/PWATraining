@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nconsole.log('hoge');\n\n\n//# sourceURL=webpack:///./src/js/sw/index.ts?");
+eval("\n\n\n//# sourceURL=webpack:///./src/js/sw/index.ts?");
 
 /***/ })
 
