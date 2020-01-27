@@ -94,31 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n// this is entry point\nvar utils_1 = __webpack_require__(/*! ./utils */ \"./src/js/utils/index.ts\");\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('../sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\nutils_1.SWLog('hoge');\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
-
-/***/ }),
-
-/***/ "./src/js/utils/index.ts":
-/*!*******************************!*\
-  !*** ./src/js/utils/index.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./log */ \"./src/js/utils/log.ts\"));\n\n\n//# sourceURL=webpack:///./src/js/utils/index.ts?");
-
-/***/ }),
-
-/***/ "./src/js/utils/log.ts":
-/*!*****************************!*\
-  !*** ./src/js/utils/log.ts ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar log = function (tag, messages) {\n    (function expantion(messages, count) {\n        if (count === void 0) { count = 0; }\n        messages.forEach(function (msg) {\n            Array.isArray(msg)\n                ? expantion(msg, ++count)\n                : console.log('\\t'.repeat(count) + msg);\n        });\n    })([(new Date).toString(), messages]);\n};\nfunction SWLog() {\n    var messages = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        messages[_i] = arguments[_i];\n    }\n    log('[ServiceWorker]', messages);\n}\nexports.SWLog = SWLog;\n\n\n//# sourceURL=webpack:///./src/js/utils/log.ts?");
+eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('../sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
 
 /***/ })
 
