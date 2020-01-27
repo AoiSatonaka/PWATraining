@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('../sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
+eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
 
 /***/ })
 
