@@ -6,6 +6,7 @@
   "scripts": {
     "build:sass": "sass src/style.sass:public/style.css",
     "build:pug": "pug src/ --out public/ --pretty",
+    "build:webpack": "webpack",
     "build": "run-p build:*",
     "watch": "run-p 'build:* -- --watch'",
     "deploy": "npm run build && gh-pages -d public"
