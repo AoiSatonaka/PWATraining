@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar utils_1 = __webpack_require__(/*! ../utils */ \"./src/js/utils/index.ts\");\nself.addEventListener('install', function (e) { return utils_1.SWLog('Install!'); });\nself.addEventListener('activate', function (e) { return utils_1.SWLog('Activate!!'); });\nself.addEventListener('fetch', function (e) { return utils_1.SWLog('Fetch!'); });\n\n\n//# sourceURL=webpack:///./src/js/sw/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar utils_1 = __webpack_require__(/*! ../utils */ \"./src/js/utils/index.ts\");\nvar CACHE_NAME = 'PWATraining_Cache';\nvar urlsToCache = [\n    '/',\n    '/styles/style.css',\n    '/js/main.bundle.js',\n];\nself.addEventListener('install', function (evt) {\n    utils_1.SWLog('Install Running');\n    evt.waitUntil(caches.open(CACHE_NAME)\n        .then(function (cache) { return cache.addAll(urlsToCache); })\n        .catch(function (reason) { return utils_1.SWLog('Cache Install Failed', \"reason: \" + reason); }));\n});\nself.addEventListener('activate', function (evt) {\n    utils_1.SWLog('Activate Running');\n});\nself.addEventListener('fetch', function (evt) {\n    utils_1.SWLog('Fetch Running');\n    evt.respondWith(caches.match(evt.request)\n        .then(function (response) { return (response !== null && response !== void 0 ? response : fetch(evt.request)); })\n        .catch(function (reason) { return utils_1.SWLog('Cache Fetch Failed', \"reason: \" + reason); }));\n});\n\n\n//# sourceURL=webpack:///./src/js/sw/index.ts?");
 
 /***/ }),
 
@@ -118,7 +118,7 @@ eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar log = function (tag, messages) {\n    (function expantion(messages, count) {\n        if (count === void 0) { count = 0; }\n        messages.forEach(function (msg) {\n            Array.isArray(msg)\n                ? expantion(msg, ++count)\n                : console.log('\\t'.repeat(count) + msg);\n        });\n    })([(new Date).toString(), messages]);\n};\nfunction SWLog() {\n    var messages = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        messages[_i] = arguments[_i];\n    }\n    log('[ServiceWorker]', messages);\n}\nexports.SWLog = SWLog;\n\n\n//# sourceURL=webpack:///./src/js/utils/log.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar log = function (tag, title, messages) {\n    (function expantion(messages, count) {\n        if (count === void 0) { count = 0; }\n        messages.forEach(function (msg) {\n            Array.isArray(msg)\n                ? expantion(msg, ++count)\n                : console.log('\\t'.repeat(count) + msg);\n        });\n    })([(new Date).toString(), [title, messages]]);\n};\nfunction SWLog(title) {\n    var messages = [];\n    for (var _i = 1; _i < arguments.length; _i++) {\n        messages[_i - 1] = arguments[_i];\n    }\n    log('[ServiceWorker]', title, messages);\n}\nexports.SWLog = SWLog;\n\n\n//# sourceURL=webpack:///./src/js/utils/log.ts?");
 
 /***/ })
 

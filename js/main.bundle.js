@@ -94,7 +94,31 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('sw.js')\n            .then(function (registration) { return console.log(\"ServiceWorker Registration Successful! \\n\\t scope: \" + registration.scope); })\n            .catch(function (reason) { return console.log(\"ServiceWorker Registration Error: \" + reason); });\n    });\n}\nvar num = 0;\nvar out = document.getElementById('out');\nout.innerHTML = num.toString();\ndocument.getElementById('btn').onclick = function (e) {\n    num++;\n    out.innerHTML = num.toString();\n};\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar utils_1 = __webpack_require__(/*! ./utils */ \"./src/js/utils/index.ts\");\n// this is entry point\nif ('serviceWorker' in navigator) {\n    window.addEventListener('load', function (e) {\n        navigator.serviceWorker\n            .register('sw.js')\n            .then(function (registration) { return utils_1.SWLog('Registration Successful!', \"scope: \" + registration.scope); })\n            .catch(function (reason) { return utils_1.SWLog(\"Registration Error: \" + reason); });\n    });\n}\n// click counter\nvar num = 0;\nvar out = document.getElementById('out');\nout.innerHTML = num.toString();\ndocument.getElementById('btn').onclick = function (e) {\n    num++;\n    out.innerHTML = num.toString();\n};\n\n\n//# sourceURL=webpack:///./src/js/index.ts?");
+
+/***/ }),
+
+/***/ "./src/js/utils/index.ts":
+/*!*******************************!*\
+  !*** ./src/js/utils/index.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./log */ \"./src/js/utils/log.ts\"));\n\n\n//# sourceURL=webpack:///./src/js/utils/index.ts?");
+
+/***/ }),
+
+/***/ "./src/js/utils/log.ts":
+/*!*****************************!*\
+  !*** ./src/js/utils/log.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar log = function (tag, title, messages) {\n    (function expantion(messages, count) {\n        if (count === void 0) { count = 0; }\n        messages.forEach(function (msg) {\n            Array.isArray(msg)\n                ? expantion(msg, ++count)\n                : console.log('\\t'.repeat(count) + msg);\n        });\n    })([(new Date).toString(), [title, messages]]);\n};\nfunction SWLog(title) {\n    var messages = [];\n    for (var _i = 1; _i < arguments.length; _i++) {\n        messages[_i - 1] = arguments[_i];\n    }\n    log('[ServiceWorker]', title, messages);\n}\nexports.SWLog = SWLog;\n\n\n//# sourceURL=webpack:///./src/js/utils/log.ts?");
 
 /***/ })
 
