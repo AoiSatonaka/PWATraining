@@ -1,16 +1,16 @@
 html, body {
   height: 100vh;
   font-family: helvetica;
-  background-color: #000;
+  text-align: center;
+  background-color: #f00;
   color: #fff; }
+
+html {
+  touch-action: manipulation; }
 
 html, body, h1, p, header, footer {
   margin: 0;
   padding: 0; }
-
-html {
-  touch-action: manipulation;
-  text-align: center; }
 
 header, footer {
   padding: 5vh 0; }
