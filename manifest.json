@@ -2,7 +2,7 @@
   "lang": "ja",
   "name": "PWATraining",
   "short_name": "PWATraining",
-  "start_url": "https://aoisatonaka.github.io/PWATraining/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#21cf9b",
   "theme_color": "#3cd1df",
